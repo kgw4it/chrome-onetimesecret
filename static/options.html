@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>One Time Secret for Chrome | Options</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style type="text/css">
+    body {
+      padding-top: 0px;
+      padding-bottom: 10px;
+      font-family: georgia, serif;
+    }
+
+    /* Custom container */
+
+    .container-narrow {
+      margin: 0 auto;
+      max-width: 640px;
+    }
+
+    .container-narrow>hr {
+      margin: 30px 0;
+    }
+
+    .masthead {
+      color: #ccc;
+    }
+
+    .masthead .nav {
+      margin-top: 24px;
+      padding: 0px;
+    }
+
+    /* Main marketing message and sign up button */
+
+    .jumbotron {
+      margin: 20px 0;
+      text-align: center;
+      color: #999;
+      font-size: 16px;
+    }
+
+    .jumbotron h1 {
+      font-size: 22px;
+      font-weight: normal;
+      line-height: 1;
+      margin-top: 0px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .jumbotron .lead {
+      color: #999;
+      line-height: 1;
+      font-size: 16px;
+    }
+
+    .jumbotron .btn {
+      padding: 14px 24px;
+    }
+
+    .jumbotron .hint {
+      font-style: italic;
+    }
+
+    .jumbotron .more {}
+
+    .jumbotron .more a {
+      color: #111;
+    }
+
+    /* Supporting marketing content */
+
+    .marketing {
+      margin: 20px 0;
+    }
+
+    #logo {
+      background-image: url('/logo.png');
+      background-size: 48px 48px;
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+    }
+
+    @media (min-width: 481px) {
+      #contentTab {
+        margin-top: 20px;
+      }
+    }
+
+    /* Landscape phones and down */
+
+    @media (max-width: 480px) {
+      body {}
+      #logo {
+        background-image: url('/img/logo-36.png');
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+      }
+      .masthead .nav {
+        margin-top: 18px;
+        padding: 0px;
+      }
+      .jumbotron {
+        margin: 0px 0;
+      }
+      .jumbotron h1 {
+        letter-spacing: -1px;
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="">
+  <div id="banner">
+    <div class="broadcast"></div>
+  </div>
+  <div class="container-narrow">
+
+    <div class="masthead">
+      <div class="nav pull-right">
+      </div>
+      <a href="/"><h3 id="logo"></h3></a>
+    </div>
+
+
+    <div class="jumbotron">
+
+      <h1 class="">One Time Secret for Chrome | Options</h1>
+
+      <div id="status" class="alert alert-success" style="display:none;">
+        <button type="button" class="close" data-dismiss="alert">×</button> Changes successfully saved!
+      </div>
+
+      <form id="options" method="post" autocomplete="off" action="/" class="form-horizontal">
+        <fieldset>
+          <div class="well options-box">
+            <div class="title">Options</div>
+            <div class="control-group">
+              <label class="control-label lighter" for="hostField">Host:</label>
+              <div class="controls">
+                <input class="input-block-level" type="text" name="host" id="hostField" value="" placeholder="https://onetimesecret.com" autocomplete="off" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label lighter" for="usernameField">Username:</label>
+              <div class="controls">
+                <input class="input-block-level" type="text" name="username" id="usernameField" value="" autocomplete="off" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label lighter" for="apikeyField">API-Key:</label>
+              <div class="controls">
+                <input class="input-block-level" type="password" name="apikey" id="apikeyField" value="" autocomplete="off" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label lighter" for="lifetimeField">Lifetime:</label>
+              <div class="controls">
+                <select class="input-block-level" id="lifetimeField" name="lifetime" class="span3">
+                <option value="604800">7 days</option>
+                <option value="259200">3 days</option>
+                <option value="86400">1 day</option>
+                <option value="43200">12 hours</option>
+                <option value="14400">4 hours</option>
+                <option value="3600">1 hour</option>
+                <option value="1800">30 minutes</option>
+                <option value="300">5 minutes</option>
+              </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label lighter" for="askForPassphraseField">Ask For a Passphrase:</label>
+              <div class="controls">
+                <select class="input-block-level" id="askForPassphraseField" name="askforpassphrase" class="span3">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              </div>
+            </div>
+          </div>
+          <button class="create btn btn-medium btn-block btn-custom cufon" type="button" id="save" name="save" value="save">Save</button>
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+  <!-- /container -->
+
+  <script src="options.js"></script>
+
+
+  <!-- :: -->
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+language: node_js
+node_js: "lts/*"
+
+script:
+  - npm run zip-all
+
+deploy:
+  provider: releases
+  api_key:
+    secure: ""
+  file:
+    - "dist-chrome-prod.zip"
+    - "dist-firefox-prod.zip"
+    - "dist-chrome-debug.zip"
+    - "dist-firefox-debug.zip"
+    - "dist-firefox-beta.zip"
+  skip_cleanup: true
+  on:
+    tags: true
