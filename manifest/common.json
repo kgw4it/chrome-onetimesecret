@@ -33,5 +33,14 @@
   "web_accessible_resources": [
     "background_page.js.map",
     "options.js.map"
-  ]
+  ],
+  "commands": {
+    "create-secret-from-selection": {
+      "suggested_key": {
+        "default": "Alt+Shift+O",
+        "mac": "Alt+Shift+O"
+      },
+      "description": "Create a secret from currently selected text"
+    }
+  }
 }
