@@ -1,4 +1,6 @@
-import { Storage } from '../../modules/storage'
+import {
+  Storage
+} from '../../modules/storage'
 import '../../css/bootstrap-responsive.min.css'
 import '../../css/bootstrap.min.css'
 import '../../css/main.css'
@@ -12,12 +14,15 @@ function saveOptions() {
   let lifetime = document.getElementById('lifetimeField').value
   let askForPassphrase =
     document.getElementById('askForPassphraseField').value === 'yes'
+  let openSettingsOnIconClick =
+    document.getElementById('openSettingsOnIconClickField').value === 'yes'
 
   myStorage.setHost(host)
   myStorage.setUsername(username)
   myStorage.setApiKey(apikey)
   myStorage.setLifetime(lifetime)
   myStorage.setAskForPassphrase(askForPassphrase)
+  myStorage.setOpenSettingsOnIconClick(openSettingsOnIconClick)
   myStorage.persist().then(function() {
     // Update status to let user know options were saved.
     document.getElementById('status').style.display = 'block'
@@ -37,6 +42,9 @@ function restoreOptions() {
     document.getElementById(
       'askForPassphraseField'
     ).value = myStorage.getAskForPassphrase() ? 'yes' : 'no'
+    document.getElementById(
+      'openSettingsOnIconClickField'
+    ).value = myStorage.getOpenSettingsOnIconClick() ? 'yes' : 'no'
   })
 }
 document.addEventListener('DOMContentLoaded', restoreOptions)

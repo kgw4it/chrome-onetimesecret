@@ -9,7 +9,8 @@ export function Storage() {
       apikey: ''
     },
     lifetime: 86400,
-    askForPassphrase: false
+    askForPassphrase: false,
+    openSettingsOnIconClick: true
   }
 
   var init = function() {
@@ -43,6 +44,10 @@ export function Storage() {
     model.askForPassphrase = askForPassphrase
   }
 
+  var setOpenSettingsOnIconClick = function(openSettingsOnIconClick) {
+    model.openSettingsOnIconClick = openSettingsOnIconClick
+  }
+
   var getHost = function() {
     return model.host
   }
@@ -63,6 +68,10 @@ export function Storage() {
     return model.askForPassphrase ? true : false
   }
 
+  var getOpenSettingsOnIconClick = function() {
+    return model.openSettingsOnIconClick ? true : false
+  }
+
   var persist = function() {
     return browser.storage.local.set(model)
   }
@@ -75,10 +84,12 @@ export function Storage() {
     setApiKey: setApiKey,
     setLifetime: setLifetime,
     setAskForPassphrase: setAskForPassphrase,
+    setOpenSettingsOnIconClick: setOpenSettingsOnIconClick,
     getHost: getHost,
     getUsername: getUsername,
     getApiKey: getApiKey,
     getLifetime: getLifetime,
-    getAskForPassphrase: getAskForPassphrase
+    getAskForPassphrase: getAskForPassphrase,
+    getOpenSettingsOnIconClick: getOpenSettingsOnIconClick
   }
 }

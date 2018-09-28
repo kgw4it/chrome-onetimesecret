@@ -1,6 +1,10 @@
 const browser = require('webextension-polyfill')
-import { OneTimeSecretApi } from 'onetimesecret-api'
-import { Storage } from '../modules/storage'
+import {
+  OneTimeSecretApi
+} from 'onetimesecret-api'
+import {
+  Storage
+} from '../modules/storage'
 
 // Create OTS page context menu options
 function createContextItem() {
@@ -26,8 +30,7 @@ function createContextItem() {
     myStorage.init().then(function() {
       const ots = new OneTimeSecretApi(
         myStorage.getUsername(),
-        myStorage.getApiKey(),
-        {
+        myStorage.getApiKey(), {
           url: myStorage.getHost(),
           apiVersion: 'v1'
         }
@@ -59,3 +62,14 @@ function createContextItem() {
 
 // add the context buttons
 createContextItem()
+
+// register a handler for the icon click
+
+browser.browserAction.onClicked.addListener(function(tab) {
+  var myStorage = Storage()
+  myStorage.init().then(function() {
+    chrome.tabs.create({
+      url: myStorage.getOpenSettingsOnIconClick() ? "options.html" : myStorage.getHost()
+    });
+  });
+});
